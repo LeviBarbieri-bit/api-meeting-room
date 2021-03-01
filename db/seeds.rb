@@ -6,4 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create(email: "levibarbieri@gmail.com", password: "q1w2e3r4", name: "Levi Barbieri")
+#create user
+User.create!(email: "levibarbieri@gmail.com", password: "q1w2e3r4", name: "Levi Barbieri")
+
+#create schedules
+Schedule.create(users_id: "7", date: "2021-03-15", time: "6:00")
+ 

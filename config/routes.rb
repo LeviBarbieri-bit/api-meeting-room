@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  post "/register", to: "users#create"
+  #users
   post "/login", to: "users#login"
-  get "/auto_login", to: "users#auto_login"
+  scope '/users' do
+    get "/list", to: "users#index"
+    post "/register", to: "users#create"
+    delete "/destroy", to: "users#destroy"
+  end  
+  
+  #schedules
+  scope '/schedules' do
+    post "/create", to: "schedules#create"
+    get "/list", to: "schedules#index"
+  end
 end
