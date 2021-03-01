@@ -1,0 +1,15 @@
+current directory: /home/levibarbieri/Área de Trabalho/www/ESL-test-meeting-room-/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+/usr/bin/ruby2.7 -I /usr/lib/ruby/2.7.0 -r ./siteconf20210228-5025-125qess.rb extconf.rb
+creating Makefile
+
+current directory: /home/levibarbieri/Área de Trabalho/www/ESL-test-meeting-room-/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/levibarbieri/Área de Trabalho/www/ESL-test-meeting-room-/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/levibarbieri/Área de Trabalho/www/ESL-test-meeting-room-/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20210228-5025-1n26qeo
