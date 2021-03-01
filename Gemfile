@@ -26,9 +26,13 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rack-cors'
 
 gem 'jwt_sessions', '~> 2.3'
+gem 'devise'
+gem 'devise-jwt'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails'
+  gem 'devise'
+  gem 'devise-jwt'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
