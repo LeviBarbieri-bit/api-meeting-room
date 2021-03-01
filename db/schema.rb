@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_180711) do
   create_table "schedules", force: :cascade do |t|
     t.integer "users_id", null: false
     t.string "time", null: false
+    t.text "description"
     t.date "date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
