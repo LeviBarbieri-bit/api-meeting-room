@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   #users
   post "/login", to: "users#login"
   post "/register", to: "users#create"
+  get "/auto_login", to: "users#auto_login"
   scope '/users' do
     get "/list", to: "users#index"
     delete "/destroy", to: "users#destroy"
