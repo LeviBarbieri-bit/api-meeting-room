@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   #users
   post "/login", to: "users#login"
+  post "/register", to: "users#create"
   scope '/users' do
     get "/list", to: "users#index"
-    post "/register", to: "users#create"
     delete "/destroy", to: "users#destroy"
+    put "/update", to: "users#update"
   end  
   
   #schedules

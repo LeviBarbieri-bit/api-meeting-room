@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     before_action :authorized, only: [:auto_login]
 
-    # show all register user
+    # show all register user 
     def index
       @user = User.all
 
@@ -18,7 +18,17 @@ class UsersController < ApplicationController
 
       if @user.valid?
         token = encode_token({user_id: @user.id})
-        render json: {status: :created, token: token}
+        render json: {status: :created, token: token, user: @user}
+      else
+        render json: @user.errors, status: :unprocessable_entity
+      end
+    end
+
+    def update
+      
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+        render json: {status: :updated}
       else
         render json: @user.errors, status: :unprocessable_entity
       end
@@ -27,7 +37,7 @@ class UsersController < ApplicationController
     def destroy
       @user = User.find(params[:id])
       @user.destroy
-      render json: {status: :ok}
+      render json: {status: :deleted}
     end
 
     # LOGGING IN
@@ -36,7 +46,7 @@ class UsersController < ApplicationController
   
       if @user && @user.authenticate(params[:password])
         token = encode_token({user_id: @user.id})
-        render json: {status: :ok, token: token}
+        render json: {status: :ok, token: token, user: @user}
       else
         render json: {error: "Invalid email or password"}
       end
