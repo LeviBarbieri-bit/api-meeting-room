@@ -1,7 +1,8 @@
 class SchedulesController < ApplicationController
     
   def index
-    @Schedule = Schedule.all
+    @Schedule = Schedule.joins(:user).select([:users_id,:date,:name,:description,:time,:id])
+
 
     if @Schedule
       render json: @Schedule

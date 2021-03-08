@@ -1,8 +1,10 @@
 class User < ApplicationRecord
     has_secure_password
-    validates_presence_of :name, message: 'Name cannot be left blank'
-    validates_presence_of :email, message: 'Email cannot be left blank'
-    validates_presence_of :password, message: 'Password cannot be left blank'
-    validates_format_of :email, with: /\A([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})\z/i , message: 'other than email'
-    validates_uniqueness_of :email, message: 'Equal email has already been added'
+    has_many :schedules
+
+    validates_presence_of :name, message: 'O nome não pode ser deixado em branco'
+    validates_presence_of :email, message: 'O e-mail não pode ser deixado em branco'
+    validates_presence_of :password, message: 'A senha não pode ser deixada em branco'
+    validates_format_of :email, with: /\A([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})\z/i , message: 'Diferente de e-mail'
+    validates_uniqueness_of :email, message: 'E-mail igual já foi adicionado'
 end

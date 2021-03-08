@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   get "/auto_login", to: "users#auto_login"
   scope '/users' do
     get "/list", to: "users#index"
-    delete "/destroy", to: "users#destroy"
-    put "/update", to: "users#update"
+    delete "/destroy/:id", to: "users#destroy"
+    put "/update/:id", to: "users#update"
   end  
   
   #schedules
   scope '/schedules' do
     post "/create", to: "schedules#create"
     get "/list", to: "schedules#index"
+    put "/update/:id", to: "schedules#update"
+    delete "/destroy/:id", to: "schedules#destroy"
   end
 end
