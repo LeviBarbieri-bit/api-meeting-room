@@ -1,5 +1,6 @@
 class SchedulesController < ApplicationController
-    
+  before_action :authorized, only: [:auto_login]
+  
   def index
     @Schedule = Schedule.joins(:user).select([:user_id,:date,:name,:description,:time,:id])
 
@@ -12,11 +13,10 @@ class SchedulesController < ApplicationController
   end
 
   def create
-
     @Schedule = Schedule.create(schedule_params)
     
     if @Schedule.valid?
-      render json: {status: :created}
+      render json: {status: :ok}
     else
       render json: @Schedule.errors, status: :unprocessable_entity
     end

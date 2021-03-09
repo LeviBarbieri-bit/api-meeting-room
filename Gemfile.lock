@@ -165,8 +165,11 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
     thor (1.1.0)
+    timeliness (0.4.4)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    validates_timeliness (5.0.0.beta2)
+      timeliness (>= 0.3.10, < 1)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -190,6 +193,7 @@ DEPENDENCIES
   spring
   sqlite3 (~> 1.4)
   tzinfo-data
+  validates_timeliness (~> 5.0.0.beta1)
 
 RUBY VERSION
    ruby 2.7.0p0
