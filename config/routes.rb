@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   scope '/schedules' do
     post "/create", to: "schedules#create"
     get "/list", to: "schedules#index"
-    put "/update/:id", to: "schedules#update"
+    put "/update", to: "schedules#update"
     delete "/destroy/:id", to: "schedules#destroy"
   end
 end

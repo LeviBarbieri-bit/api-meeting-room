@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(version: 2021_03_01_180711) do
 
   create_table "schedules", force: :cascade do |t|
-    t.integer "users_id"
+    t.integer "user_id"
     t.string "time", null: false
     t.text "description"
     t.date "date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_schedules_on_users_id"
+    t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
