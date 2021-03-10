@@ -22,6 +22,6 @@ test:
 
 production:
   adapter: postgresql
-  database: heroku-postgresql
-  prepared_statements: false
-  advisory_locks: false
+  host: ec2-54-159-175-113.compute-1.amazonaws.com
+  username: zrntzonshtfpon
+  database: dbte2bmj58n0ck
