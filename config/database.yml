@@ -22,5 +22,6 @@ test:
 
 production:
   adapter: postgresql
+  database: heroku-postgresql
   prepared_statements: false
   advisory_locks: false
