@@ -1,6 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :authorized, only: [:auto_login]
-  
+
   def index
     @Schedule = Schedule.joins(:user).select([:user_id,:date,:name,:description,:time,:id])
 
