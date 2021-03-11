@@ -1,24 +1,14 @@
-# README
+# Reserva de Sala - API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esse Projeto foi desenvolvido como teste de contratação para empresa ESL buscando mostrar habilidade tecnicas e um pouco do meu conhecimento em minha carreira como desenvolvedor e estudante.
 
-Things you may want to cover:
+# Stack
+<img src="https://img.icons8.com/fluent/48/000000/ruby-programming-language.png"/>
 
-* Ruby version
+# O que foi feito na api ?
 
-* System dependencies
+* Teste unitário utilizando rspec
+* Trabalhando com arquitetura MVC
+* Relacionamento entre tabelas utilizando as migrations
+* Validações de dados
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
