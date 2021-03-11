@@ -1,17 +1,6 @@
 class UsersController < ApplicationController
     before_action :authorized, only: [:auto_login]
 
-    # show all register user 
-    def index
-      @user = User.all
-
-      if @user
-        render json: @user
-      else 
-        render json: {status: :RecordNotFound}
-      end 
-    end
-
     # REGISTER
     def create
       @user = User.create(user_params)
@@ -22,22 +11,6 @@ class UsersController < ApplicationController
       else
         render json: @user.errors, status: :unprocessable_entity
       end
-    end
-
-    def update
-      
-      @user = User.find(params[:id])
-      if @user.update(user_params)
-        render json: {status: :updated}
-      else
-        render json: @user.errors, status: :unprocessable_entity
-      end
-    end
-    
-    def destroy
-      @user = User.find(params[:id])
-      @user.destroy
-      render json: {status: :deleted}
     end
 
     # LOGGING IN
