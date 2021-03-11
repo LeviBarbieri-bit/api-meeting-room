@@ -24,17 +24,28 @@ class SchedulesController < ApplicationController
   def update
       
     @Schedule = Schedule.find(params[:id])
-    if @Schedule.update(schedule_params)
-      render json: {status: :updated}
+    user_login = logged_in_user
+    
+    if @Schedule[:user_id] == user_login[:id]
+      if @Schedule.update(schedule_params)
+        render json: {status:   :ok}
+      else
+        render json: @Schedule.errors, status: :unprocessable_entity
+      end
     else
-      render json: @Schedule.errors, status: :unprocessable_entity
-    end
+      render json: {status: 405}
+    end  
   end
   
   def destroy
     @Schedule = Schedule.find(params[:id])
-    @Schedule.destroy
-    render json: {status: :deleted}
+    user_login = logged_in_user
+    if @Schedule[:user_id] == user_login[:id]
+      @Schedule.destroy
+      render json: {status: :deleted}
+    else 
+      render json: {status: 405}
+    end
   end
 
   private 
