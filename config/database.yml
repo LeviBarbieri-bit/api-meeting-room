@@ -22,6 +22,6 @@ test:
 
 production:
   adapter: postgresql
-  host: ec2-54-159-175-113.compute-1.amazonaws.com
-  username: zrntzonshtfpon
-  database: dbte2bmj58n0ck
+  host: ec2-54-161-239-198.compute-1.amazonaws.com
+  username: wmydyfqnzeyxab
+  database: d1mvqn4437s4qp
