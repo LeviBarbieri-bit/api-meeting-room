@@ -1,7 +1,7 @@
 class SchedulesController < ApplicationController
 
   def index
-    @Schedule = Schedule.joins(:user).select([:user_id,:date,:name,:description,:time,:id])
+    @Schedule = Schedule.joins(:user).select([:user_id,:schedule,:name,:description,:id])
 
 
     if @Schedule
@@ -50,6 +50,6 @@ class SchedulesController < ApplicationController
 
   private 
     def schedule_params
-      params.permit(:user_id, :time, :date, :description)
+      params.permit(:user_id, :schedule, :description)
     end
 end
